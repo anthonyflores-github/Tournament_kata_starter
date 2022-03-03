@@ -1,10 +1,10 @@
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Xunit;
-
 namespace Tournaments.Tests
 {
-    public class PingTests: IClassFixture<WebApplicationFactory<Startup>>
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc.Testing;
+    using Xunit;
+
+    public class PingTests : IClassFixture<WebApplicationFactory<Startup>>
     {
         private readonly WebApplicationFactory<Startup> _factory;
 

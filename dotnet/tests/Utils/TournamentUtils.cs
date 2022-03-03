@@ -1,12 +1,12 @@
-﻿using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Tournaments.Model;
-
-namespace Tournaments.Tests.Utils
+﻿namespace Tournaments.Tests.Utils
 {
+    using System.Net.Http;
+    using System.Text;
+    using System.Text.Json;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc.Testing;
+    using Tournaments.Model;
+
     public static class TournamentUtils
     {
         public static async Task<Response<CreatedResponse>> CreateTournament(string tournamentName,
@@ -22,13 +22,10 @@ namespace Tournaments.Tests.Utils
                 new StringContent(JsonSerializer.Serialize(tournament), Encoding.UTF8, "application/json"));
 
             CreatedResponse content = null;
-            if (response.IsSuccessStatusCode)
-            {
-                content = JsonSerializer.Deserialize<CreatedResponse>(await response.Content.ReadAsStringAsync());
-            }
+            if (response.IsSuccessStatusCode) content = JsonSerializer.Deserialize<CreatedResponse>(await response.Content.ReadAsStringAsync());
             return new Response<CreatedResponse>(response.StatusCode, content);
         }
-        
+
         public static async Task<Response<Tournament>> GetTournament(string tournamentId,
             WebApplicationFactory<Startup> factory)
         {
@@ -37,10 +34,8 @@ namespace Tournaments.Tests.Utils
 
             Tournament tournament = null;
             if (response.IsSuccessStatusCode)
-            {
                 tournament =
-                    JsonSerializer.Deserialize<Model.Tournament>(await response.Content.ReadAsStringAsync());
-            }
+                    JsonSerializer.Deserialize<Tournament>(await response.Content.ReadAsStringAsync());
 
             return new Response<Tournament>(response.StatusCode, tournament);
         }

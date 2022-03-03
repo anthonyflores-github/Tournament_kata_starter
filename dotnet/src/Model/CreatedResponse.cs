@@ -1,15 +1,15 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Tournaments.Model
+﻿namespace Tournaments.Model
 {
+    using System.Text.Json.Serialization;
+
     public class CreatedResponse
     {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
 
         public CreatedResponse(string id)
         {
             Id = id;
         }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
     }
 }

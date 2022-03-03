@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Tournaments.Model;
-using Tournaments.Services;
-
-namespace Tournaments.Controllers
+﻿namespace Tournaments.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using Tournaments.Model;
+    using Tournaments.Services;
+
     [ApiController]
     [Route("api/[controller]s")]
-    public class TournamentController: ControllerBase
+    public class TournamentController : ControllerBase
     {
         private readonly TournamentRepository _tournamentRepository;
 
@@ -19,7 +19,10 @@ namespace Tournaments.Controllers
         public IActionResult CreateTournament([FromBody] TournamentToCreate tournament)
         {
             var id = _tournamentRepository.CreateTournament(tournament);
-            return CreatedAtAction(nameof(GetTournamentById), new { id }, new CreatedResponse(id));
+            return CreatedAtAction(nameof(GetTournamentById), new
+            {
+                id
+            }, new CreatedResponse(id));
         }
 
         [HttpGet("{id}")]

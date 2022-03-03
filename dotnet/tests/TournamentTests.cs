@@ -1,17 +1,12 @@
-using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Tournaments.Model;
-using Tournaments.Tests.Utils;
-using Xunit;
-using Tournament = Tournaments.Model.Tournament;
-
 namespace Tournaments.Tests
 {
-    public class TournamentTests: IClassFixture<WebApplicationFactory<Startup>>
+    using System.Net;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Mvc.Testing;
+    using Tournaments.Tests.Utils;
+    using Xunit;
+
+    public class TournamentTests : IClassFixture<WebApplicationFactory<Startup>>
     {
         private readonly WebApplicationFactory<Startup> _factory;
 
@@ -29,7 +24,7 @@ namespace Tournaments.Tests
             Assert.NotNull(response.Content?.Id);
         }
 
-      
+
 
         [Fact]
         public async Task CreatedTournament_Should_EnableToRetrieveTournamentAfterwards()

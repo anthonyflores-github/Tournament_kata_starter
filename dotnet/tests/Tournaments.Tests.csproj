@@ -9,9 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.14" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
-        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.14"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4"/>
+        <PackageReference Include="xunit" Version="2.4.1"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -23,18 +23,14 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Tournaments.csproj" />
+        <ProjectReference Include="..\src\Tournaments.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Tournaments.Tests\obj\project.nuget.cache" />
-      <None Remove="Tournaments.Tests\obj\project.assets.json" />
-      <None Remove="Tournaments.Tests\obj\Tournaments.Tests.csproj.nuget.g.targets" />
-      <None Remove="Tournaments.Tests\obj\Tournaments.Tests.csproj.nuget.g.props" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Tournaments.Tests\obj" />
+        <None Remove="Tournaments.Tests\obj\project.nuget.cache"/>
+        <None Remove="Tournaments.Tests\obj\project.assets.json"/>
+        <None Remove="Tournaments.Tests\obj\Tournaments.Tests.csproj.nuget.g.targets"/>
+        <None Remove="Tournaments.Tests\obj\Tournaments.Tests.csproj.nuget.g.props"/>
     </ItemGroup>
 
 </Project>

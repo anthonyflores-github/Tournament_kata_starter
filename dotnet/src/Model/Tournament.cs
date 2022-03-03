@@ -1,7 +1,7 @@
-﻿using System.Text.Json.Serialization;
-
-namespace Tournaments.Model
+﻿namespace Tournaments.Model
 {
+    using System.Text.Json.Serialization;
+
     public class Tournament
     {
         [JsonPropertyName("id")]
